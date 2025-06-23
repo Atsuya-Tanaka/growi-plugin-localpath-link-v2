@@ -55,7 +55,7 @@ export const localPathComponent = (A: React.FunctionComponent<any>): React.Funct
           return (
             <a                                            // A だとonMouseLeaveが発火しない
               href={"file://" + props['data-lpath']}
-              onClick={() => { copyToClipboard(props['data-lpath']); setStatus('copied'); }}
+              onClick={() => { copyToClipboard(String(props['data-lpath'])); setStatus('copied'); }}
               onMouseLeave={() => setStatus('yetCopied')}
               className={classNames(statusClassNames)}
             >
