@@ -1,0 +1,21 @@
+/* ローカルパスのコピーに伴うCSS */
+.copyValue {
+  cursor: pointer;
+  position: relative;
+}
+
+.copiedTooltip::after {
+  content: "Copied!";
+  white-space: nowrap;
+  background: #555;
+  display: inline-block;
+  color: #fff;
+  border-radius: 0.4rem;
+  position: absolute;
+  left: 50%;
+  bottom: -0.8rem;
+  transform: translate(-50%, 0);
+  font-size: 0.75rem;
+  padding: 4px 10px 6px 10px;
+  animation: fade-copiedTooltip 0.5s 1s 1 forwards;
+}

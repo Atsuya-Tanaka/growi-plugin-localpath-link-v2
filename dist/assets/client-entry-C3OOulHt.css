@@ -1,0 +1,1 @@
+.copyValue{cursor:pointer;position:relative}.copiedTooltip:after{content:"Copied!";white-space:nowrap;background:#555;display:inline-block;color:#fff;border-radius:.4rem;position:absolute;left:50%;bottom:-.8rem;transform:translate(-50%);font-size:.75rem;padding:4px 10px 6px;animation:fade-copiedTooltip .5s 1s 1 forwards}
