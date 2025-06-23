@@ -87,8 +87,16 @@ export const localPathComponent = (A: React.FunctionComponent<any>): React.Funct
   };
 };
 
-function copyToClipboard(argStr:string)
-{
-  if(navigator.clipboard)
-    return navigator.clipboard.writeText(argStr);
+function copyToClipboard(argStr: string) {
+  if (navigator.clipboard) {                           // navigator.clipboardを使えるなら
+    return navigator.clipboard.writeText(argStr);         // クリップボードにコピー
+  }
+  else {                                               // 使えないなら
+    let textarea = document.createElement('textarea');    // textareaを一時的に作成
+    textarea.value = argStr;                              // テキストを代入
+    document.body.appendChild(textarea);                  // textareaをDOMに追加
+    textarea.select();                                    // textareaを選択して
+    document.execCommand('copy');                         // クリップボードにコピー
+    document.body.removeChild(textarea);                  // textareaを削除
+  }
 }
